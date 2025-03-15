@@ -2,21 +2,21 @@
 import { useCallback } from "react";
 import Particles from "react-particles";
 import { loadSlim } from "tsparticles-slim";
+import { Engine } from "tsparticles-engine";
+import { Container } from "tsparticles-engine";
 
 const ParticlesComponent = () => {
     
-    const particlesInit = useCallback(async (engine: any) => {
+    const particlesInit = useCallback(async (engine: Engine) => {
         await loadSlim(engine);
     }, []);
 
-    const particlesLoaded = useCallback(async (container: any) => {
-    }, []);
+
 
     return (
         <Particles
             id="tsparticles"
             init={particlesInit}
-            loaded={particlesLoaded}
             options={{
                 fpsLimit: 220,
                 interactivity: {
@@ -71,7 +71,7 @@ const ParticlesComponent = () => {
                         type: "circle",
                     },
                     size: {
-                        value: { min: 1, max: 2},
+                        value: { min: 1, max: 2 },
                     },
                 },
                 detectRetina: true,

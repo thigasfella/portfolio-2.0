@@ -1,7 +1,5 @@
-import Image from "next/image";
-import { AnimatePresence, motion, stagger } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 import { useEffect, useState } from "react";
-import { initialize } from "next/dist/server/lib/render-server";
 import { useLenis } from "lenis/react";
 
 export default function Topbar() {
@@ -10,6 +8,10 @@ export default function Topbar() {
     whileInView: { opacity: 1, scale: 1 },
     transition: { duration: 0.5, type: "spring", stiffness: 100 },
     exit: { opacity: 0, scale: 0 },
+  };
+  type Link = {
+    name: string;
+    link: string;
   };
 
   const links = [
@@ -173,7 +175,7 @@ export default function Topbar() {
                   exit="initial"
                   className="flex flex-col h-full w-full items-center justify-center gap-6"
                 >
-                  {links.map((link: any, index: number) => (
+                  {links.map((link: Link, index: number) => (
                     <a
                       href={link.link}
                       key={index}

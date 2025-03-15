@@ -2,7 +2,7 @@
 import Topbar from "@/view/components/topBar/Topbar";
 import HomePage from "@/view/layouts/home/HomePage";
 import { motion } from "framer-motion";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import ReactLenis from "lenis/react";
 import ParticlesComponent from "@/view/components/particles/Particles";
 import About from "@/view/layouts/about/About";
@@ -14,20 +14,20 @@ export default function Home() {
   const [showMsgApresentation, setShowMsgApresentation] = useState(false);
   const [isFadingOut, setIsFadingOut] = useState(true);
 
-  //  useEffect(() => {
-  //    const fadeOutTimer = setTimeout(() => {
-  //      setIsFadingOut(true);
-  //    }, 3000);
+    useEffect(() => {
+      const fadeOutTimer = setTimeout(() => {
+        setIsFadingOut(true);
+      }, 3000);
 
-  //    const removeMsgTimer = setTimeout(() => {
-  //      setShowMsgApresentation(false);
-  //    }, 4000);
+      const removeMsgTimer = setTimeout(() => {
+        setShowMsgApresentation(false);
+      }, 4000);
 
-  //    return () => {
-  //      clearTimeout(fadeOutTimer);
-  //      clearTimeout(removeMsgTimer);
-  //    };
-  //  }, []);
+      return () => {
+        clearTimeout(fadeOutTimer);
+        clearTimeout(removeMsgTimer);
+      };
+    }, []);
 
   useGSAP(() => {
     setTimeout(() => {

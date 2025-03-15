@@ -2,6 +2,7 @@ import { useGSAP } from "@gsap/react";
 import { useLayoutEffect, useRef } from "react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { gsap } from "gsap";
+import Image from "next/image";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -125,7 +126,7 @@ export default function About() {
           </div>
         <div className="flex flex-col items-center w-full gap-[3rem] lg:flex-row">
           <div ref={refPhoto} className="w-full z-10">
-            <img src="/photo.jpg" alt="Foto de Thiago" className="rounded-2xl w-[20rem]"/>
+            <Image src="/photo.jpg" width={500} height={500} alt="Foto de Thiago" className="rounded-2xl"/>
           </div>
 
           <div className="w-[100%] flex flex-col gap-[1rem] lg:w-auto">
