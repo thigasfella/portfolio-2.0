@@ -16,96 +16,274 @@ export default function About() {
   useGSAP(() => {
     const mm = gsap.matchMedia();
     setTimeout(() => {
-      // mm.add("(min-width: 1024px)", () => {
-      //   gsap.fromTo(
-      //     refTitle.current,
-      //     {
-      //       opacity: 0,
-      //       y: 20,
-      //     },
-      //     {
-      //       opacity: 1,
-      //       y: 0,
-      //       scrollTrigger: {
-      //         trigger: refTitle.current,
-      //         start: "top 40%",
-      //         end: "top 25%",
-      //         scrub: 1,
-      //       },
-      //     }
-      //   );
+       mm.add("(min-width: 1024px)", () => {
+         gsap.fromTo(
+           refTitle.current,
+           {
+             opacity: 0,
+             y: 20,
+           },
+           {
+             opacity: 1,
+             y: 0,
+             scrollTrigger: {
+               trigger: refTitle.current,
+               start: "top 40%",
+               end: "top 25%",
+               scrub: 1,
+               markers: true
+             },
+           }
+         );
   
-      //   gsap.fromTo(
-      //     refLine.current,
-      //     {
-      //       scaleX: 0,
-      //       transformOrigin: "center",
-      //     },
-      //     {
-      //       scaleX: 1,
-      //       scrollTrigger: {
-      //         trigger: refLine.current,
-      //         start: "top 40%",
-      //         end: "top 25%",
-      //         scrub: 1,
-      //       },
-      //     }
-      //   );
+         gsap.fromTo(
+           refLine.current,
+           {
+             scaleX: 0,
+             transformOrigin: "center",
+           },
+           {
+             scaleX: 1,
+             scrollTrigger: {
+               trigger: refLine.current,
+               start: "top 40%",
+               end: "top 25%",
+               scrub: 1,
+               markers: true
+             },
+           }
+         );
   
-      //   gsap.fromTo(
-      //     refPhoto.current,
-      //     {
-      //       y: "20%",
-      //       opacity: 0,
-      //     },
-      //     {
-      //       y: 0,
-      //       opacity: 1,
-      //       scrollTrigger: {
-      //         trigger: refPhoto.current,
-      //         start: "top center",
-      //         end: "top 35%",
-      //         scrub: 1,
-      //       },
-      //     }
-      //   );
+         gsap.fromTo(
+           refPhoto.current,
+           {
+             opacity: 0,
+             y: "20%",
+           },
+           {
+             opacity: 1,
+             y: 0,
+             scrollTrigger: {
+               trigger: refPhoto.current,
+               start: "top center",
+               end: "top 35%",
+               scrub: 1,
+               markers: true
+             },
+           }
+         );
   
-      //   gsap.fromTo(
-      //     refTitleDescription.current,
-      //     {
-      //       x: "-10%",
-      //       opacity: 0,
-      //     },
-      //     {
-      //       x: 0,
-      //       opacity: 1,
-      //       scrollTrigger: {
-      //         trigger: refTitleDescription.current,
-      //         start: "top center",
-      //         end: "top 35%",
-      //         scrub: 1,
-      //       },
-      //     }
-      //   );
+         gsap.fromTo(
+           refTitleDescription.current,
+           {
+             y: "-20%",
+             opacity: 0,
+           },
+           {
+             y: 0,
+             opacity: 1,
+             scrollTrigger: {
+               trigger: refTitleDescription.current,
+               start: "top center",
+               end: "top 45%",
+               scrub: true,
+               markers: true
+             },
+           }
+         );
   
-      //   gsap.fromTo(
-      //     refSubtitleDescription.current,
-      //     {
-      //       x: "-10%",
-      //       opacity: 0,
-      //     },
-      //     {
-      //       x: 0,
-      //       opacity: 1,
-      //       scrollTrigger: {
-      //         trigger: refSubtitleDescription.current,
-      //         start: "top center",
-      //         end: "top 35%",
-      //         scrub: 1,
-      //       },
-      //     }
-      //   );
-      // })
+         gsap.fromTo(
+           refSubtitleDescription.current,
+           {
+             y: "20%",
+             opacity: 0,
+           },
+           {
+             y: 0,
+             opacity: 1,
+             scrollTrigger: {
+               trigger: refSubtitleDescription.current,
+               start: "top 60%",
+               end: "top 55%",
+               scrub: 1,
+               markers: true
+             },
+           }
+         );
+       })
+
+
+       mm.add("(min-width: 768px) and (max-width: 1024px)", () => {
+        gsap.fromTo(
+          refTitle.current,
+          {
+            opacity: 0,
+            y: 20,
+          },
+          {
+            opacity: 1,
+            y: 0,
+            scrollTrigger: {
+              trigger: refTitle.current,
+              start: "top 40%",
+              end: "top 25%",
+              scrub: 1,
+              markers: true
+            },
+          }
+        );
+ 
+        gsap.fromTo(
+          refLine.current,
+          {
+            scaleX: 0,
+            transformOrigin: "center",
+          },
+          {
+            scaleX: 1,
+            scrollTrigger: {
+              trigger: refLine.current,
+              start: "top 40%",
+              end: "top 25%",
+              scrub: 1,
+              markers: true
+            },
+          }
+        );
+ 
+        gsap.fromTo(
+          refPhoto.current,
+          {
+            opacity: 0,
+            y: "20%",
+          },
+          {
+            opacity: 1,
+            y: 0,
+            scrollTrigger: {
+              trigger: refPhoto.current,
+              start: "top center",
+              end: "top 35%",
+              scrub: 1,
+              markers: true
+            },
+          }
+        );
+        gsap.fromTo(
+          refTitleDescription.current,
+          {
+            y: "-20%",
+            opacity: 0,
+          },
+          {
+            y: 0,
+            opacity: 1,
+            scrollTrigger: {
+              trigger: refTitleDescription.current,
+              start: "top 40%",
+              end: "top 30%",
+              scrub: true,
+              markers: true
+            },
+          }
+        );
+ 
+        gsap.fromTo(
+          refSubtitleDescription.current,
+          {
+            y: "20%",
+            opacity: 0,
+          },
+          {
+            y: 0,
+            opacity: 1,
+            scrollTrigger: {
+              trigger: refSubtitleDescription.current,
+              start: "top 60%",
+              end: "top 55%",
+              scrub: 1,
+              markers: true
+            },
+          }
+        );
+      })
+
+
+      mm.add("(max-width: 768px)", () => {
+        gsap.fromTo(
+          refTitle.current,
+          {
+            opacity: 0,
+            y: 20,
+          },
+          {
+            opacity: 1,
+            y: 0,
+            scrollTrigger: {
+              trigger: refTitle.current,
+              start: "top 40%",
+              end: "top 25%",
+              scrub: 1,
+              markers: true
+            },
+          }
+        );
+ 
+        gsap.fromTo(
+          refLine.current,
+          {
+            scaleX: 0,
+            transformOrigin: "center",
+          },
+          {
+            scaleX: 1,
+            scrollTrigger: {
+              trigger: refLine.current,
+              start: "top 40%",
+              end: "top 25%",
+              scrub: 1,
+              markers: true
+            },
+          }
+        );
+        gsap.fromTo(
+          refTitleDescription.current,
+          {
+            y: "-20%",
+            opacity: 0,
+          },
+          {
+            y: 0,
+            opacity: 1,
+            scrollTrigger: {
+              trigger: refTitleDescription.current,
+              start: "top center",
+              end: "top 45%",
+              scrub: true,
+              markers: true
+            },
+          }
+        );
+ 
+        gsap.fromTo(
+          refSubtitleDescription.current,
+          {
+            y: "20%",
+            opacity: 0,
+          },
+          {
+            y: 0,
+            opacity: 1,
+            scrollTrigger: {
+              trigger: refSubtitleDescription.current,
+              start: "top 65%",
+              end: "top 60%",
+              scrub: 1,
+              markers: true
+            },
+          }
+        );
+      })
       
     }, 500);
   }, []);
