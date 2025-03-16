@@ -119,7 +119,7 @@ export default function Topbar() {
     <>
       <header>
         <nav>
-          <div className="fixed flex flex items-center justify-between w-full  p-3">
+          <div className="fixed flex flex items-center justify-between w-full z-50 p-3">
             <div>
             
             </div>

@@ -14,61 +14,124 @@ export default function HomePage() {
   const refBtn = useRef<HTMLDivElement>(null);
 
   useGSAP(() => {
+    const mm = gsap.matchMedia();
     setTimeout(() => {
-      gsap.fromTo(
-        refTitle.current,
-        {
-          opacity: 1,
-          y: 0,
-        },
-        {
-          opacity: 0.3,
-          y: -50,
-          scrollTrigger: {
-            trigger: refTitle.current,
-            start: "top 10vh",
-            end: "top top",
-            scrub: 1,
+      mm.add("(min-width: 768px)", () => {
+        gsap.fromTo(
+          refTitle.current,
+          {
+            opacity: 1,
+            y: 0,
           },
-        }
-      );
+          {
+            opacity: 0.3,
+            y: -50,
+            scrollTrigger: {
+              trigger: refTitle.current,
+              start: "top 20%",
+              end: "top 10%",
+              scrub: 1,
+            },
+          }
+        );
+  
+        gsap.fromTo(
+          refDescription.current,
+          {
+            opacity: 1,
+            y: 0,
+          },
+          {
+            opacity: 0.3,
+            y: -50,
+            scrollTrigger: {
+              trigger: refDescription.current,
+              start: "top 20%",
+              end: "top 10%",
+              scrub: 1,
+            },
+          }
+        );
+  
+        gsap.fromTo(
+          refBtn.current,
+          {
+            opacity: 1,
+            y: 0,
+          },
+          {
+            opacity: 0.3,
+            y: -50,
+            scrollTrigger: {
+              trigger: refBtn.current,
+              start: "top 20%",
+              end: "top 10%",
+              scrub: 1,
+            },
+          }
+        );
+      })
 
-      gsap.fromTo(
-        refDescription.current,
-        {
-          opacity: 1,
-          y: 0,
-        },
-        {
-          opacity: 0.3,
-          y: -50,
-          scrollTrigger: {
-            trigger: refDescription.current,
-            start: "top 20vh",
-            end: "top top",
-            scrub: 1,
-          },
-        }
-      );
 
-      gsap.fromTo(
-        refBtn.current,
-        {
-          opacity: 1,
-          y: 0,
-        },
-        {
-          opacity: 0.3,
-          y: -50,
-          scrollTrigger: {
-            trigger: refBtn.current,
-            start: "top 20vh",
-            end: "top 10vh",
-            scrub: 1,
+      mm.add("(max-width: 768px)", () => {
+        gsap.fromTo(
+          refTitle.current,
+          {
+            opacity: 1,
+            y: 0,
           },
-        }
-      );
+          {
+            opacity: 0.3,
+            y: -50,
+            scrollTrigger: {
+              trigger: refTitle.current,
+              start: "top 10%",
+              end: "top top",
+              scrub: 1,
+            },
+          }
+        );
+  
+        gsap.fromTo(
+          refDescription.current,
+          {
+            opacity: 1,
+            y: 0,
+          },
+          {
+            opacity: 0.3,
+            y: -50,
+            scrollTrigger: {
+              trigger: refDescription.current,
+              start: "top 20%",
+              end: "top 10%",
+              scrub: 1,
+            },
+          }
+        );
+  
+        gsap.fromTo(
+          refBtn.current,
+          {
+            opacity: 1,
+            y: 0,
+          },
+          {
+            opacity: 0.3,
+            y: -50,
+            scrollTrigger: {
+              trigger: refBtn.current,
+              start: "top 20%",
+              end: "top 10%",
+              scrub: 1,
+            },
+          }
+        );
+      })
+      
     }, 500);
+
+    return () => mm.revert();
   }, []);
 
   useLayoutEffect(() => {
@@ -81,10 +144,10 @@ export default function HomePage() {
         <div className="flex flex-col w-full h-full gap-4">
           <div className="flex flex-col gap-6">
             <div ref={refTitle} id="title">
-              <h1 className="text-5xl lg:text-7xl relative mx-auto font-anton text-justify leading-[.95] text-generalText">
+              <h1 className="text-6xl lg:text-7xl relative mx-auto font-anton text-justify leading-[.95] text-generalText">
                 FULLSTACK
               </h1>
-              <h1 className="text-5xl lg:text-7xl relative mx-auto font-anton leading-[.95] text-lightText ml-6">
+              <h1 className="text-6xl lg:text-7xl relative mx-auto font-anton leading-[.95] text-lightText ml-6">
                 DEVELOPER
               </h1>
             </div>
@@ -108,7 +171,7 @@ export default function HomePage() {
               <motion.button
                 whileHover={{ scale: 1.1}}
                 whileTap={{ scale: 0.95 }}
-                className="p-3 bg-generalText mt-4 text-primary font-anton text-xl w-full tracking-widest"
+                className="p-2 bg-generalText mt-4 text-primary font-anton text-xl w-[80%] tracking-widest"
               >
                   CONTATE-ME
               </motion.button>

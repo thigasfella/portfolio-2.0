@@ -35,6 +35,7 @@ export default {
         },
         generalText: "#F5A623",
         lightText: "#FFFFFF",
+        middleGrayColor: "#DEDEDE",
         subtitleColor: "#B5B5B5"
       },
     },
