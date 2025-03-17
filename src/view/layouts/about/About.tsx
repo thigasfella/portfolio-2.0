@@ -28,10 +28,9 @@ export default function About() {
              y: 0,
              scrollTrigger: {
                trigger: refTitle.current,
-               start: "top 40%",
-               end: "top 25%",
+               start: "top 45%",
+               end: "top 30%",
                scrub: 1,
-               markers: true
              },
            }
          );
@@ -46,10 +45,9 @@ export default function About() {
              scaleX: 1,
              scrollTrigger: {
                trigger: refLine.current,
-               start: "top 40%",
-               end: "top 25%",
+               start: "top 45%",
+               end: "top 40%",
                scrub: 1,
-               markers: true
              },
            }
          );
@@ -65,10 +63,9 @@ export default function About() {
              y: 0,
              scrollTrigger: {
                trigger: refPhoto.current,
-               start: "top center",
-               end: "top 35%",
+               start: "top 55%",
+               end: "top 40%",
                scrub: 1,
-               markers: true
              },
            }
          );
@@ -87,7 +84,6 @@ export default function About() {
                start: "top center",
                end: "top 45%",
                scrub: true,
-               markers: true
              },
            }
          );
@@ -106,7 +102,6 @@ export default function About() {
                start: "top 60%",
                end: "top 55%",
                scrub: 1,
-               markers: true
              },
            }
          );
@@ -127,8 +122,7 @@ export default function About() {
               trigger: refTitle.current,
               start: "top 40%",
               end: "top 25%",
-              scrub: 1,
-              markers: true
+              scrub: 1
             },
           }
         );
@@ -143,10 +137,9 @@ export default function About() {
             scaleX: 1,
             scrollTrigger: {
               trigger: refLine.current,
-              start: "top 40%",
-              end: "top 25%",
-              scrub: 1,
-              markers: true
+              start: "top 45%",
+              end: "top 40%",
+              scrub: 1
             },
           }
         );
@@ -164,8 +157,7 @@ export default function About() {
               trigger: refPhoto.current,
               start: "top center",
               end: "top 35%",
-              scrub: 1,
-              markers: true
+              scrub: 1
             },
           }
         );
@@ -182,8 +174,7 @@ export default function About() {
               trigger: refTitleDescription.current,
               start: "top 40%",
               end: "top 30%",
-              scrub: true,
-              markers: true
+              scrub: true
             },
           }
         );
@@ -201,8 +192,7 @@ export default function About() {
               trigger: refSubtitleDescription.current,
               start: "top 60%",
               end: "top 55%",
-              scrub: 1,
-              markers: true
+              scrub: 1
             },
           }
         );
@@ -221,10 +211,9 @@ export default function About() {
             y: 0,
             scrollTrigger: {
               trigger: refTitle.current,
-              start: "top 40%",
-              end: "top 25%",
-              scrub: 1,
-              markers: true
+              start: "top 45%",
+              end: "top 30%",
+              scrub: 1
             },
           }
         );
@@ -239,10 +228,9 @@ export default function About() {
             scaleX: 1,
             scrollTrigger: {
               trigger: refLine.current,
-              start: "top 40%",
-              end: "top 25%",
+              start: "top 45%",
+              end: "top 40%",
               scrub: 1,
-              markers: true
             },
           }
         );
@@ -257,10 +245,9 @@ export default function About() {
             opacity: 1,
             scrollTrigger: {
               trigger: refTitleDescription.current,
-              start: "top center",
-              end: "top 45%",
-              scrub: true,
-              markers: true
+              start: "top 45%",
+              end: "top 30%",
+              scrub: true
             },
           }
         );
@@ -279,7 +266,6 @@ export default function About() {
               start: "top 65%",
               end: "top 60%",
               scrub: 1,
-              markers: true
             },
           }
         );
@@ -306,15 +292,15 @@ export default function About() {
             <div className="w-full h-[1px] bg-GreyDarkerBgColor"></div>
           </div>
         <div className="flex flex-col items-center w-full gap-[3rem] md:flex-row lg:flex-row">
-          <div ref={refPhoto} className="w-full">
-            <Image src="/photo.jpg" width={500} height={500} alt="Foto de Thiago" className="rounded-2xl hidden d-hidden md:w-[400px] md:block"/>
+          <div ref={refPhoto} className="w-full hidden md:block">
+            <Image src="/photo.jpg" width={500} height={500} alt="Foto de Thiago" className="rounded-2xl md:w-[400px]"/>
           </div>
 
           <div className="w-[100%] flex flex-col gap-[1rem] lg:w-auto">
             <div ref={refTitleDescription} className="leading-none">
               <span className="text-middleGrayColor leading-none font-inter font-medium text-5xl md:text-3xl">Olá, muito prazer!</span>
             </div>
-            <div ref={refSubtitleDescription} className="text-justify md:w-[100%]">
+            <div ref={refSubtitleDescription} className="md:w-[100%]">
               <span className="text-subtitleColor leading-none text-base">Me chamo Thiago e sou um desenvolvedor Fullstack apaixonado por tecnologia e inovação. 
                 Desde que comecei minha jornada na programação, venho buscando não apenas 
                 aprimorar minhas habilidades técnicas, mas também desenvolver a mentalidade 
