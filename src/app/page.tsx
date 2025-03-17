@@ -92,8 +92,8 @@ export default function Home() {
               </div>
             </section>
 
-            <section className="min-h-[100vh] bg-primary about">
-              <div className="flex h-[100vh] flex-col items-center justify-center container">
+            <section className="min-h-[100vh]  bg-primary about">
+              <div className="flex h-[100vh] flex-col container">
                 <motion.div
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
@@ -103,6 +103,7 @@ export default function Home() {
                 </motion.div>
               </div>
             </section>
+
           </ReactLenis>
         </>
       )}

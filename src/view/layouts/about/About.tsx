@@ -28,8 +28,8 @@ export default function About() {
              y: 0,
              scrollTrigger: {
                trigger: refTitle.current,
-               start: "top 45%",
-               end: "top 30%",
+               start: "top 55%",
+               end: "top 50%",
                scrub: 1,
              },
            }
@@ -45,8 +45,8 @@ export default function About() {
              scaleX: 1,
              scrollTrigger: {
                trigger: refLine.current,
-               start: "top 45%",
-               end: "top 40%",
+               start: "top 55%",
+               end: "top 50%",
                scrub: 1,
              },
            }
@@ -63,9 +63,10 @@ export default function About() {
              y: 0,
              scrollTrigger: {
                trigger: refPhoto.current,
-               start: "top 55%",
-               end: "top 40%",
+               start: "top 60%",
+               end: "top 55%",
                scrub: 1,
+               markers: true
              },
            }
          );
@@ -81,9 +82,10 @@ export default function About() {
              opacity: 1,
              scrollTrigger: {
                trigger: refTitleDescription.current,
-               start: "top center",
-               end: "top 45%",
-               scrub: true,
+               start: "top 60%",
+               end: "top 55%",
+               scrub: 1,
+               markers: true
              },
            }
          );
@@ -99,8 +101,8 @@ export default function About() {
              opacity: 1,
              scrollTrigger: {
                trigger: refSubtitleDescription.current,
-               start: "top 60%",
-               end: "top 55%",
+               start: "top 70%",
+               end: "top 65%",
                scrub: 1,
              },
            }
@@ -172,9 +174,9 @@ export default function About() {
             opacity: 1,
             scrollTrigger: {
               trigger: refTitleDescription.current,
-              start: "top 40%",
-              end: "top 30%",
-              scrub: true
+              start: "top 42%",
+              end: "top 37%",
+              scrub: 1
             },
           }
         );
@@ -247,7 +249,7 @@ export default function About() {
               trigger: refTitleDescription.current,
               start: "top 45%",
               end: "top 30%",
-              scrub: true
+              scrub: 1
             },
           }
         );

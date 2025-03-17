@@ -23,10 +23,7 @@ const ParticlesComponent = () => {
                         onClick: {
                             enable: false,
                         },
-                        onHover: {
-                            enable: false,
-                            mode: "repulse",
-                        },
+                        
                         resize: true,
                     },
                     modes: {
@@ -70,7 +67,7 @@ const ParticlesComponent = () => {
                         type: "circle",
                     },
                     size: {
-                        value: { min: 1, max: 2 },
+                        value: 0.8,
                     },
                 },
                 detectRetina: true,
