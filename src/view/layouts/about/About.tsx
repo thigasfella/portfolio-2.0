@@ -288,7 +288,6 @@ export default function About() {
               start: "top top",
               end: "top top",
               scrub: 3,
-              markers:true
             },
           }
         );
@@ -408,7 +407,6 @@ export default function About() {
               start: "top top",
               end: "top top",
               scrub: 3,
-              markers:true
             },
           }
         );
