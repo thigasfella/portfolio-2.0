@@ -20,34 +20,6 @@ export default function About() {
     setTimeout(() => {
       mm.add("(min-width: 1024px)", () => {
         gsap.fromTo(
-          refBelt.current,
-          {
-            opacity: 0.3,
-            x: 0,
-          },
-          {
-            opacity: 1,
-            x: "-60vw",
-            scrollTrigger: {
-              trigger: refBelt.current,
-              start: "top center",
-              end: "top 10%",
-              scrub: 3,
-              onLeave: () => {
-                gsap.to(refBelt.current, { y: -20, scrollTrigger:{
-                  scrub: 3
-                } });
-              },
-
-              onEnterBack: () => {
-                gsap.fromTo(refBelt.current, { y: -20 }, { y: 0, scrollTrigger:{
-                  scrub: 3
-                }});
-              },
-            },
-          }
-        );
-        gsap.fromTo(
           refTitle.current,
           {
             opacity: 0,
@@ -62,8 +34,6 @@ export default function About() {
               end: "top 50%",
               scrub: 1,
             },
-
-            
           }
         );
 
@@ -158,34 +128,6 @@ export default function About() {
       });
 
       mm.add("(min-width: 768px) and (max-width: 1024px)", () => {
-        gsap.fromTo(
-          refBelt.current,
-          {
-            opacity: 0.3,
-            x: 0,
-          },
-          {
-            opacity: 1,
-            x: "-90vw",
-            scrollTrigger: {
-              trigger: refBelt.current,
-              start: "top 70%",
-              end: "top 10%",
-              scrub: 3,
-              onLeave: () => {
-                gsap.to(refBelt.current, { y: -20, scrollTrigger:{
-                  scrub: 3
-                } });
-              },
-
-              onEnterBack: () => {
-                gsap.fromTo(refBelt.current, { y: -20 }, { y: 0, scrollTrigger:{
-                  scrub: 3
-                }});
-              },
-            },
-          }
-        );
         gsap.fromTo(
           refTitle.current,
           {
@@ -294,35 +236,6 @@ export default function About() {
       });
 
       mm.add("(max-width: 768px)", () => {
-
-        gsap.fromTo(
-          refBelt.current,
-          {
-            opacity: 0.3,
-            x: 0,
-          },
-          {
-            opacity: 1,
-            x: "-150vw",
-            scrollTrigger: {
-              trigger: refBelt.current,
-              start: "top 70%",
-              end: "top 10%",
-              scrub: 3,
-              onLeave: () => {
-                gsap.to(refBelt.current, { y: -20, scrollTrigger:{
-                  scrub: 3
-                } });
-              },
-
-              onEnterBack: () => {
-                gsap.fromTo(refBelt.current, { y: -20 }, { y: 0, scrollTrigger:{
-                  scrub: 3
-                }});
-              },
-            },
-          }
-        );
         gsap.fromTo(
           refTitle.current,
           {
@@ -411,6 +324,19 @@ export default function About() {
           }
         );
       });
+
+      gsap.to(refBelt.current, {
+        scrollTrigger: {
+          trigger: document.documentElement,
+          start: 0,
+          end: window.innerHeight,
+          onUpdate: (e) => (direction = e.direction * -1),
+          scrub: true,
+        },
+        x: "-100px",
+      });
+
+      requestAnimationFrame(animation);
     }, 500);
   }, []);
 
@@ -418,71 +344,100 @@ export default function About() {
     ScrollTrigger.refresh();
   }, []);
 
+  const firstText = useRef<HTMLSpanElement>(null);
+  const secondText = useRef<HTMLSpanElement>(null);
+  let xPercent = 0;
+  let direction = -1;
+
+  const animation = () => {
+    if (xPercent <= -117.5) {
+      xPercent = 0;
+    }
+
+    if (xPercent > 0) {
+      xPercent = -117.5;
+    }
+    gsap.set(firstText.current, { xPercent: xPercent });
+    gsap.set(secondText.current, { xPercent: xPercent });
+
+    xPercent += 0.2 * direction;
+    requestAnimationFrame(animation);
+  };
+
   return (
     <>
-        <div ref={refContainerAll} className="flex flex-col gap-6">
-          <div className="w-full overflow-hidden">
-            <div ref={refBelt} className="w-full">
-              <div
-                className="relative flex gap-4 whitespace-nowrap"
-              >
-                <span className="text-white text-7xl font-lora inline-block animate-scroll">
-                  Codifique. Crie. Evolua.
-                </span>
-                <span className="text-white absolute left-[780px] text-7xl font-lora inline-block animate-scroll">
-                  -
-                </span>
-                <span className="text-white absolute left-[830px] text-7xl font-lora inline-block animate-scroll">
-                  Codifique. Crie. Evolua.
-                </span>
-                <span className="text-white absolute left-[1610px] text-7xl font-lora inline-block animate-scroll">
-                  -
-                </span>
-                <span className="text-white absolute left-[1660px] text-7xl font-lora inline-block animate-scroll">
-                  Codifique. Crie. Evolua.
-                </span>
-              </div>
-            </div>
-          </div>
-          <span
-            ref={refTitle}
-            className="font-inter text-subtitleColor text-sm font-normal leading-[.1] mt-[2rem]"
+      <div ref={refContainerAll} className="flex flex-col gap-6">
+        <div className="w-full overflow-hidden">
+          <div
+            className="w-full"
+            style={{
+              maskImage:
+                "linear-gradient(to right, transparent 0%, black 25%, black 75%, transparent 100%), " +
+                "linear-gradient(to left, transparent 0%, black 25%, black 75%, transparent 100%)",
+              WebkitMaskImage:
+                "linear-gradient(to right, transparent 0%, black 25%, black 75%, transparent 100%), " +
+                "linear-gradient(to left, transparent 0%, black 25%, black 75%, transparent 100%)",
+            }}
           >
-            Conheça um pouco mais sobre mim
-          </span>
-          <div ref={refLine} className="w-full h-[1px]">
-            <div className="w-full h-[1px] bg-GreyDarkerBgColor"></div>
-          </div>
-          <div className="flex flex-col items-center w-full gap-[3rem] md:flex-row lg:flex-row">
-            <div ref={refPhoto} className="w-full hidden md:block">
-              <Image
-                src="/photo.jpg"
-                width={500}
-                height={500}
-                alt="Foto de Thiago"
-                className="rounded-2xl md:w-[400px]"
-              />
-            </div>
+            <div
+              ref={refBelt}
+              className="relative flex gap-4 whitespace-nowrap"
+            >
+              <span
+                ref={firstText}
+                className="m-0 text-white text-8xl font-lora inline-block"
+              >
+                Codifique. Crie. Evolua.
+              </span>
 
-            <div className="w-[100%] flex flex-col gap-[1rem] lg:w-auto">
-              <div ref={refTitleDescription} className="leading-none">
-                <span className="text-middleGrayColor leading-none font-inter font-medium text-5xl md:text-3xl">
-                  Olá, muito prazer!
-                </span>
-              </div>
-              <div ref={refSubtitleDescription} className="md:w-[100%]">
-                <span className="text-subtitleColor leading-none text-base">
-                  Me chamo Thiago e sou um desenvolvedor Fullstack apaixonado
-                  por tecnologia e inovação. Desde que comecei minha jornada na
-                  programação, venho buscando não apenas aprimorar minhas
-                  habilidades técnicas, mas também desenvolver a mentalidade de
-                  um profissional capaz de resolver problemas reais e impactar
-                  positivamente as pessoas com meu trabalho.
-                </span>
-              </div>
+              <span
+                ref={secondText}
+                className="m-0 text-white absolute left-[1216px] text-8xl font-lora inline-block"
+              >
+                Codifique. Crie. Evolua.
+              </span>
             </div>
           </div>
         </div>
+        <span
+          ref={refTitle}
+          className="font-inter text-subtitleColor text-sm font-normal leading-[.1] mt-[2rem]"
+        >
+          Conheça um pouco mais sobre mim
+        </span>
+        <div ref={refLine} className="w-full h-[1px]">
+          <div className="w-full h-[1px] bg-GreyDarkerBgColor"></div>
+        </div>
+        <div className="flex flex-col items-center w-full gap-[3rem] md:flex-row lg:flex-row">
+          <div ref={refPhoto} className="w-full hidden md:block">
+            <Image
+              src="/photo.jpg"
+              width={500}
+              height={500}
+              alt="Foto de Thiago"
+              className="rounded-2xl md:w-[400px]"
+            />
+          </div>
+
+          <div className="w-[100%] flex flex-col gap-[1rem] lg:w-auto">
+            <div ref={refTitleDescription} className="leading-none">
+              <span className="text-middleGrayColor leading-none font-inter font-medium text-5xl md:text-3xl">
+                Olá, muito prazer!
+              </span>
+            </div>
+            <div ref={refSubtitleDescription} className="md:w-[100%]">
+              <span className="text-subtitleColor leading-none text-base">
+                Me chamo Thiago e sou um desenvolvedor Fullstack apaixonado por
+                tecnologia e inovação. Desde que comecei minha jornada na
+                programação, venho buscando não apenas aprimorar minhas
+                habilidades técnicas, mas também desenvolver a mentalidade de um
+                profissional capaz de resolver problemas reais e impactar
+                positivamente as pessoas com meu trabalho.
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
     </>
   );
 }
