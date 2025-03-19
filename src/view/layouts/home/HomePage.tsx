@@ -140,7 +140,7 @@ export default function HomePage() {
 
   return (
     <>
-      <div id="initial" className="flex flex-col w-full h-full gap-4">
+      <div id="initial" className="flex flex-col w-full h-full gap-4 relative">
         <div className="flex flex-col w-full h-full gap-4">
           <div className="flex flex-col gap-6">
             <div ref={refTitle} id="title">
