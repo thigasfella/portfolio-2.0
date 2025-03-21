@@ -24,6 +24,12 @@ export default function MyStack() {
   const containerTechsRef = useRef<HTMLDivElement>(null)
   const containerTitleAll = useRef<HTMLDivElement>(null)
   const containerTitle = useRef<HTMLDivElement>(null)
+
+  interface TechItem {
+    src: string;
+    text: string;
+  }
+
   useGSAP(() => {
 
     setTimeout(() => {
@@ -37,9 +43,9 @@ export default function MyStack() {
             },
           });
     
-          const techs = gsap.utils.toArray(".tech")
+          const techs = gsap.utils.toArray<HTMLElement>(".tech")
 
-          techs.forEach((tech: any, index: any) => {
+          techs.forEach((tech, index) => {
             tl.from(
               tech,
               {
@@ -122,7 +128,7 @@ export default function MyStack() {
             </div>
 
             <div ref={containerTechsRef} className="flex gap-[3rem] flex-col sm:flex-wrap sm:flex-row sm:items-center md:flex-row">
-              {imagesTechs.map((items: any, index: number) => {
+              {imagesTechs.map((items: TechItem, index: number) => {
                 return (
                   <div className="tech flex items-center gap-4" key={`div-${index}`}>
                     <Image
