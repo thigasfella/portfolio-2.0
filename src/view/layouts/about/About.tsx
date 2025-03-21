@@ -13,12 +13,11 @@ export default function About() {
   const refSubtitleDescription = useRef<HTMLDivElement>(null);
   const refPhoto = useRef<HTMLDivElement>(null);
   const refBelt = useRef<HTMLDivElement>(null);
-  const refContainerAll = useRef<HTMLDivElement>(null);
 
   useGSAP(() => {
     const mm = gsap.matchMedia();
     setTimeout(() => {
-      mm.add("(min-width: 1024px)", () => {
+
         gsap.fromTo(
           refTitle.current,
           {
@@ -30,11 +29,12 @@ export default function About() {
             y: 0,
             scrollTrigger: {
               trigger: refTitle.current,
-              start: "top 55%",
-              end: "top 50%",
+              start: "top 90%",
+              end: "bottom 80%",
               scrub: 1,
             },
           }
+          
         );
 
         gsap.fromTo(
@@ -47,8 +47,8 @@ export default function About() {
             scaleX: 1,
             scrollTrigger: {
               trigger: refLine.current,
-              start: "top 55%",
-              end: "top 50%",
+              start: "top 90%",
+              end: "bottom 80%",
               scrub: 1,
             },
           }
@@ -58,222 +58,24 @@ export default function About() {
           refPhoto.current,
           {
             opacity: 0,
-            y: "20%",
-          },
-          {
-            opacity: 1,
-            y: 0,
-            scrollTrigger: {
-              trigger: refPhoto.current,
-              start: "top 60%",
-              end: "top 55%",
-              scrub: 1,
-            },
-          }
-        );
-
-        gsap.fromTo(
-          refTitleDescription.current,
-          {
-            y: "-20%",
-            opacity: 0,
-          },
-          {
-            y: 0,
-            opacity: 1,
-            scrollTrigger: {
-              trigger: refTitleDescription.current,
-              start: "top 60%",
-              end: "top 55%",
-              scrub: 1,
-            },
-          }
-        );
-
-        gsap.fromTo(
-          refSubtitleDescription.current,
-          {
-            y: "20%",
-            opacity: 0,
-          },
-          {
-            y: 0,
-            opacity: 1,
-            scrollTrigger: {
-              trigger: refSubtitleDescription.current,
-              start: "top 70%",
-              end: "top 65%",
-              scrub: 1,
-            },
-          }
-        );
-
-        gsap.fromTo(
-          refContainerAll.current,
-          {
-            opacity: 1,
-            y: 0,
-          },
-          {
-            opacity: 0.8,
-            y: "-20%",
-            scrollTrigger: {
-              trigger: refContainerAll.current,
-              start: "top top",
-              end: "top top",
-              scrub: 3,
-            },
-          }
-        );
-      });
-
-      mm.add("(min-width: 768px) and (max-width: 1024px)", () => {
-        gsap.fromTo(
-          refTitle.current,
-          {
-            opacity: 0,
             y: 20,
           },
           {
             opacity: 1,
             y: 0,
             scrollTrigger: {
-              trigger: refTitle.current,
-              start: "top 50%",
-              end: "top 35%",
-              scrub: 1,
-            },
-          }
-        );
-
-        gsap.fromTo(
-          refLine.current,
-          {
-            scaleX: 0,
-            transformOrigin: "center",
-          },
-          {
-            scaleX: 1,
-            scrollTrigger: {
-              trigger: refLine.current,
-              start: "top 55%",
-              end: "top 50%",
-              scrub: 1,
-            },
-          }
-        );
-
-        gsap.fromTo(
-          refPhoto.current,
-          {
-            opacity: 0,
-            y: "20%",
-          },
-          {
-            opacity: 1,
-            y: 0,
-            scrollTrigger: {
               trigger: refPhoto.current,
-              start: "top 65%",
-              end: "top 50%",
+              start: "top 90%",
+              end: "bottom 80%",
               scrub: 1,
             },
           }
         );
+
         gsap.fromTo(
           refTitleDescription.current,
           {
-            y: "-20%",
-            opacity: 0,
-          },
-          {
-            y: 0,
-            opacity: 1,
-            scrollTrigger: {
-              trigger: refTitleDescription.current,
-              start: "top 52%",
-              end: "top 47%",
-              scrub: 1,
-            },
-          }
-        );
-
-        gsap.fromTo(
-          refSubtitleDescription.current,
-          {
-            y: "20%",
-            opacity: 0,
-          },
-          {
-            y: 0,
-            opacity: 1,
-            scrollTrigger: {
-              trigger: refSubtitleDescription.current,
-              start: "top 70%",
-              end: "top 65%",
-              scrub: 1,
-            },
-          }
-        );
-
-        gsap.fromTo(
-          refContainerAll.current,
-          {
-            opacity: 1,
-            y: 0,
-          },
-          {
-            opacity: 0.8,
-            y: "-20%",
-            scrollTrigger: {
-              trigger: refContainerAll.current,
-              start: "top top",
-              end: "top top",
-              scrub: 3,
-            },
-          }
-        );
-      });
-
-      mm.add("(max-width: 768px)", () => {
-        gsap.fromTo(
-          refTitle.current,
-          {
-            opacity: 0,
             y: 20,
-          },
-          {
-            opacity: 1,
-            y: 0,
-            scrollTrigger: {
-              trigger: refTitle.current,
-              start: "top 55%",
-              end: "top 40%",
-              scrub: 1,
-            },
-          }
-        );
-
-        gsap.fromTo(
-          refLine.current,
-          {
-            scaleX: 0,
-            transformOrigin: "center",
-          },
-          {
-            scaleX: 1,
-            scrollTrigger: {
-              trigger: refLine.current,
-              start: "top 55%",
-              end: "top 50%",
-              scrub: 1,
-            },
-          }
-        );
-        gsap.fromTo(
-          refTitleDescription.current,
-          {
-            y: "-20%",
             opacity: 0,
           },
           {
@@ -281,8 +83,8 @@ export default function About() {
             opacity: 1,
             scrollTrigger: {
               trigger: refTitleDescription.current,
-              start: "top 55%",
-              end: "top 40%",
+              start: "top 90%",
+              end: "bottom 80%",
               scrub: 1,
             },
           }
@@ -291,7 +93,7 @@ export default function About() {
         gsap.fromTo(
           refSubtitleDescription.current,
           {
-            y: "20%",
+            y: 20,
             opacity: 0,
           },
           {
@@ -299,31 +101,14 @@ export default function About() {
             opacity: 1,
             scrollTrigger: {
               trigger: refSubtitleDescription.current,
-              start: "top 75%",
-              end: "top 65%",
+              start: "top 90%",
+              end: "bottom 80%",
               scrub: 1,
             },
           }
         );
+  
 
-        gsap.fromTo(
-          refContainerAll.current,
-          {
-            opacity: 1,
-            y: 0,
-          },
-          {
-            opacity: 0.8,
-            y: "-20%",
-            scrollTrigger: {
-              trigger: refContainerAll.current,
-              start: "top top",
-              end: "top top",
-              scrub: 3,
-            },
-          }
-        );
-      });
 
       gsap.to(refBelt.current, {
         scrollTrigger: {
@@ -360,14 +145,14 @@ export default function About() {
     gsap.set(firstText.current, { xPercent: xPercent });
     gsap.set(secondText.current, { xPercent: xPercent });
 
-    xPercent += 0.2 * direction;
+    xPercent += 0.1 * direction;
     requestAnimationFrame(animation);
   };
 
   return (
     <>
-      <div ref={refContainerAll} className="flex flex-col gap-6">
-        <div className="w-full overflow-hidden">
+      <div className="flex flex-col h-[100vh] gap-6">
+        <div className="w-full relative overflow-hidden">
           <div
             className="w-full"
             style={{
@@ -425,14 +210,12 @@ export default function About() {
                 Olá, muito prazer!
               </span>
             </div>
-            <div ref={refSubtitleDescription} className="md:w-[100%]">
+            <div ref={refSubtitleDescription} className="text-justify md:w-[100%]">
               <span className="text-subtitleColor leading-none text-base">
-                Me chamo Thiago e sou um desenvolvedor Fullstack apaixonado por
-                tecnologia e inovação. Desde que comecei minha jornada na
-                programação, venho buscando não apenas aprimorar minhas
-                habilidades técnicas, mas também desenvolver a mentalidade de um
-                profissional capaz de resolver problemas reais e impactar
-                positivamente as pessoas com meu trabalho.
+              Sou Thiago, desenvolvedor Fullstack apaixonado por tecnologia. 
+              Gosto de criar soluções funcionais e intuitivas, equilibrando desempenho, 
+              escalabilidade e experiência do usuário. Sempre em busca de aprendizado, 
+              acredito no impacto real da tecnologia na vida das pessoas e nos negócios.
               </span>
             </div>
           </div>
