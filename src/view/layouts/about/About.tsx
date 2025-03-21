@@ -15,7 +15,6 @@ export default function About() {
   const refBelt = useRef<HTMLDivElement>(null);
 
   useGSAP(() => {
-    const mm = gsap.matchMedia();
     setTimeout(() => {
 
         gsap.fromTo(
