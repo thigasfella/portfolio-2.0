@@ -209,7 +209,7 @@ export default function About() {
                 Olá, muito prazer!
               </span>
             </div>
-            <div ref={refSubtitleDescription} className="text-justify md:w-[100%]">
+            <div ref={refSubtitleDescription} className="text-justify mb-[5rem] md:w-[100%]">
               <span className="text-subtitleColor leading-none text-base">
               Sou Thiago, desenvolvedor Fullstack apaixonado por tecnologia. 
               Gosto de criar soluções funcionais e intuitivas, equilibrando desempenho, 

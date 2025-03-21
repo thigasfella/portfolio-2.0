@@ -108,7 +108,7 @@ export default function MyStack() {
   }, []);
   return (
     <>
-      <div className="mt-[3rem] md:mt-[8rem]">
+      <div className="md:mt-[8rem]">
         <div className="flex flex-col gap-[3rem]">
           <div ref={containerTitleAll} className="flex items-center gap-4">
             <Image
